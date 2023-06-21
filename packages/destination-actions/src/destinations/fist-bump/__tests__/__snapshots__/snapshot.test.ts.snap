@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing snapshot for actions-fist-bump destination: trackEvent action - all fields 1`] = `
+Array [
+  Object {
+    "anonymousId": "VTPfJW70",
+    "appBuild": "VTPfJW70",
+    "appName": "VTPfJW70",
+    "appNamespace": "VTPfJW70",
+    "appVersion": "VTPfJW70",
+    "campaignName": "VTPfJW70",
+    "campaignSource": "VTPfJW70",
+    "city": "VTPfJW70",
+    "country": "VTPfJW70",
+    "deviceName": "VTPfJW70",
+    "deviceType": "VTPfJW70",
+    "email": "efisazgut@gezifhe.eh",
+    "eventName": "VTPfJW70",
+    "groupId": "VTPfJW70",
+    "language": "VTPfJW70",
+    "messageId": "VTPfJW70",
+    "osName": "VTPfJW70",
+    "osVersion": "VTPfJW70",
+    "pagePath": "VTPfJW70",
+    "pageTitle": "VTPfJW70",
+    "properties": Object {
+      "testType": "VTPfJW70",
+    },
+    "timestamp": "2088-03-19T07:34:28.658Z",
+    "userAgent": "VTPfJW70",
+    "userId": "VTPfJW70",
+  },
+]
+`;
+
+exports[`Testing snapshot for actions-fist-bump destination: trackEvent action - required fields 1`] = `
+Array [
+  Object {
+    "eventName": "VTPfJW70",
+    "timestamp": Any<String>,
+  },
+]
+`;
