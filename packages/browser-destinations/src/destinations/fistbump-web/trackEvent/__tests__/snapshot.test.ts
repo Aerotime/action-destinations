@@ -5,10 +5,8 @@ import nock from 'nock'
 
 const testDestination = createTestIntegration(destination)
 const actionSlug = 'trackEvent'
-const destinationSlug = 'Mixpanel'
+const destinationSlug = 'FistbumpWeb'
 const seedName = `${destinationSlug}#${actionSlug}`
-Math.random = jest.fn(() => 1)
-global.Date.now = jest.fn(() => 1234556)
 
 describe(`Testing snapshot for ${destinationSlug}'s ${actionSlug} destination action:`, () => {
   it('required fields', async () => {
@@ -22,7 +20,6 @@ describe(`Testing snapshot for ${destinationSlug}'s ${actionSlug} destination ac
     const event = createTestEvent({
       properties: eventData
     })
-    event.timestamp = undefined
 
     const responses = await testDestination.testAction(actionSlug, {
       event: event,
@@ -30,6 +27,7 @@ describe(`Testing snapshot for ${destinationSlug}'s ${actionSlug} destination ac
       settings: settingsData,
       auth: undefined
     })
+
     const request = responses[0].request
     const rawBody = await request.text()
 
@@ -55,7 +53,7 @@ describe(`Testing snapshot for ${destinationSlug}'s ${actionSlug} destination ac
     const event = createTestEvent({
       properties: eventData
     })
-    console.log(eventData)
+
     const responses = await testDestination.testAction(actionSlug, {
       event: event,
       mapping: event.properties,
@@ -68,7 +66,6 @@ describe(`Testing snapshot for ${destinationSlug}'s ${actionSlug} destination ac
 
     try {
       const json = JSON.parse(rawBody)
-      console.log(json)
       expect(json).toMatchSnapshot()
       return
     } catch (err) {
